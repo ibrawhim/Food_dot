@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-
+let bgstyle = {
+    backgroundColor: '#ffbd6f'
+}
 const Navbar = () => {
   return (
     <>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg" style={bgstyle}>
   <div className="container-fluid">
     <a className="navbar-brand" href="#">Food-Ted</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
