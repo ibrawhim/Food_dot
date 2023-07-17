@@ -9,18 +9,22 @@ const Home = () => {
         backgroundImage:    `url(${image2})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '100vh', // Set the desired height
-    
+        height: '100vh'
+    }
+    let inPut = {
+        backgroundColor: '#ffbd6f'
     }
 
-    const [food, setfood] = useState({})
+    const [meal, setmeal] = useState([])
+    const [food, setfood] = useState('')
     let endpoint = `https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`
 
     const searchFood = () => {
         axios.get(endpoint)
         .then((response)=>{
-            console.log(response.data);
-            setfood(response.data)
+            console.log(response.data.meals);
+            setmeal(response.data.meals)
+            setfood('')
         })
         .catch((error)=> {
             console.log(error);
@@ -30,16 +34,19 @@ const Home = () => {
   return (
     <>
         <div style={divStyle}>
-            <div>
-            <input type="text" placeholder='Enter food here' onChange={(e)=> setfood(e.target.value)}/>
-            <button onClick={searchFood}>Search</button>
+            <div className='w-50'>
+            <input className='form-control' style={inPut} type="text" placeholder='Enter food here' onChange={(e)=> setfood(e.target.value)}/>
+            <button className='w-100 btn btn-dark' onClick={searchFood}>Search</button>
             </div>
 
-            {
-                <div>
-                    <p></p>
-                </div>
-            }
+        {
+          meal.map((item,index)=>(
+            <div key={index}>
+                <h1>{item.strMeal}</h1>
+            </div>
+          ))
+        //   <p className='text-light fs-5'>{food.strMeal}</p>
+        }
         </div>
     </>
   )
