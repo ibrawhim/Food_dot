@@ -21,7 +21,7 @@ const Index = () => {
   return (
     <>
        <div style={divStyle}>
-          <Link to='/home' className="shadow p-3 rounded-4 fw-bold" style={centerDiv}>Go Home</Link>
+          <Link to='/search' className="shadow p-3 rounded-4 fw-bold" style={centerDiv}>Go to Search Page</Link>
        </div>
     </>
   );

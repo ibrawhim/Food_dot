@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom"
 import Navbar from "./components/Navbar"
-import Home from "./pages/Home"
+import Search from "./pages/Search"
 import Index from "./pages/Index"
-import Offcanvas from "./components/Offcanvas"
+import List from "./pages/List"
+
 
 
 
@@ -12,10 +13,10 @@ function App() {
   return (
     <>
     <Navbar/>
-    {/* <Offcanvas/> */}
     <Routes>
       <Route path="/" element={<Index/>}/>
-      <Route path="/home" element={<Home/>}/>
+      <Route path="/search" element={<Search/>}/>
+      <Route path="/list" element={<List/>}/>
     </Routes>
     </>
   )
