@@ -16,7 +16,7 @@ const Home = () => {
         backgroundImage:    `url(${image2})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '200vh'
+        height: '200vh',
     }
     let inPut = {
         backgroundColor: '#ffbd6f'
