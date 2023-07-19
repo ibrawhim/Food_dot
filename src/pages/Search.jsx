@@ -13,14 +13,21 @@ const Search = () => {
         color: '#8c101f'
     }
     let divStyle = {
-        backgroundImage:    `url(${image2})`,
+        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+        url(${image2})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '200vh',
+        // backgroundPosition: 'center',
+        height: '100vh'
     }
     let inPut = {
         backgroundColor: '#ffbd6f'
     }
+
+    let bgWine = {
+        backgroundColor: '#8c101f',
+        color: '#ffbd6f'
+    }
+    
 
 
     const [meal, setmeal] = useState([])
@@ -41,6 +48,7 @@ const Search = () => {
             console.log(response.data.meals);
             setmeal(response.data.meals)
             setfood('')
+            setempty('')
             }
         })
         .catch((error)=> {
@@ -54,22 +62,23 @@ const Search = () => {
 
         <section className='container-fluid'>
             <div className="row">
-                <div className='col-lg-6 col-md-8 col-sm-12'>
+                <div className='col-lg-6 col-md-8 col-sm-12 p-3 rounded-3' style={bgstyle}>
                     <input className='form-control mb-2' style={inPut} type="text" placeholder='Enter food here' onChange={(e)=> setfood(e.target.value)}/>
                     <p style={myColor} className='fw-semibold'>{empty}</p>
-                    {/* <p style={myColor} className='fw-semibold'>{incorrect}</p> */}
-                    <button className='w-100 btn btn-dark' onClick={searchFood}>Search Food</button>
-                    {meal.map((item,index)=>(
-                        <div key={index}>
-                            <img className='rounded-3' src={item.strMealThumb} alt="" width={500} height={250} />
-                            <p>{item.strMeal}</p>
-                        </div>
-                    ))}
+                    <button className='w-100 btn' style={bgWine} onClick={searchFood}>Search Food</button>
                 </div>
-
-            {
-                        meal.map((item,index)=>(
-                <div style={bgstyle} className=' col-lg-6 col-md-8 col-sm-12 rounded-3'>
+                <div className='col-lg-6 col-md-8 col-sm-12 p-3 rounded-3'>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor aperiam nemo neque ut autem. Nobis, aspernatur magni molestiae quo mollitia ipsam perferendis maxime dignissimos. Nemo, ullam aliquam quod odit deleniti eius sed magni, autem dolorum debitis aliquid nostrum culpa. Maxime doloribus laboriosam, reprehenderit odit necessitatibus cum distinctio possimus perferendis vel!
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section className='container-fluid mt-3'>
+                {
+                    meal.map((item,index)=>(
+                    <div className='row'>
+                    <div style={bgstyle} className=' col-lg-6 col-md-8 col-sm-12 rounded-3'>
                     <div key={index}>
                         <h1 className='fw-bold' style={myColor}>{item.strMeal}</h1>
                         <h3 className='fw-bold'>Location: {item.strArea}</h3>
@@ -77,9 +86,13 @@ const Search = () => {
                         <p>{item.strInstructions}</p>
                     </div>
                 </div>
-                ))
-                    }
+                <div className='col-lg-6 col-md-8 col-sm-12 rounded-3'>
+                    <img className='rounded-3 img-fluid w-100 h-75' src={item.strMealThumb} alt="" />
+                </div>
+
             </div>
+                ))
+                }
         </section>
 
         </div>
