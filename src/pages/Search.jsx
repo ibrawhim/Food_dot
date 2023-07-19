@@ -34,7 +34,10 @@ const Search = () => {
             if(food==''){
                 setempty('Field Empty')
             }
-            else {
+            else if(!response.data.meals){
+                setempty('Food is not found');
+            }
+            else{
             console.log(response.data.meals);
             setmeal(response.data.meals)
             setfood('')
@@ -54,10 +57,17 @@ const Search = () => {
                 <div className='col-lg-6 col-md-8 col-sm-12'>
                     <input className='form-control mb-2' style={inPut} type="text" placeholder='Enter food here' onChange={(e)=> setfood(e.target.value)}/>
                     <p style={myColor} className='fw-semibold'>{empty}</p>
+                    {/* <p style={myColor} className='fw-semibold'>{incorrect}</p> */}
                     <button className='w-100 btn btn-dark' onClick={searchFood}>Search Food</button>
+                    {meal.map((item,index)=>(
+                        <div key={index}>
+                            <img className='rounded-3' src={item.strMealThumb} alt="" width={500} height={250} />
+                            <p>{item.strMeal}</p>
+                        </div>
+                    ))}
                 </div>
 
-                    {
+            {
                         meal.map((item,index)=>(
                 <div style={bgstyle} className=' col-lg-6 col-md-8 col-sm-12 rounded-3'>
                     <div key={index}>
@@ -65,7 +75,6 @@ const Search = () => {
                         <h3 className='fw-bold'>Location: {item.strArea}</h3>
                         <h4>Ingredients: {item.strIngredient1} {item.strIngredient2} {item.strIngredient3} {item.strIngredient4} {item.strIngredient5}  {item.strIngredient6}  {item.strIngredient7}  {item.strIngredient8}  {item.strIngredient9}</h4>
                         <p>{item.strInstructions}</p>
-                        <img className='rounded-3' src={item.strMealThumb} alt="" width={500} height={250} />
                     </div>
                 </div>
                 ))
