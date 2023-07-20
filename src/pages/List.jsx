@@ -1,12 +1,20 @@
 import React from 'react'
 
+
+
 const List = () => {
+  let bgstyle = {
+    backgroundColor: '#ffbd6f',
+    height: '100vw',
+    padding: '10px',
+    border: '2px solid black'
+ }
   return (
     <>
-        <div>
-            <p>**Welcome to FoodFusion: Where Flavors Unite!**
+        <div style={bgstyle}>
+            <p>**Welcome to Food_bay: Where Flavors Unite!**
 
-At FoodFusion, we invite you on a gastronomic journey like no other. Step into a virtual world brimming with an extensive array of delectable meals and food, carefully curated to cater to every taste bud and dietary preference. From sumptuous breakfast delights to mouthwatering lunches, indulgent dinners, and tantalizing desserts, we have something to entice every food enthusiast.
+At Food-Bay, we invite you on a gastronomic journey like no other. Step into a virtual world brimming with an extensive array of delectable meals and food, carefully curated to cater to every taste bud and dietary preference. From sumptuous breakfast delights to mouthwatering lunches, indulgent dinners, and tantalizing desserts, we have something to entice every food enthusiast.
 
 **Discover Our Culinary Wonderland**
 
