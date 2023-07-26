@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import image2 from "../Images/image2.jpg";
+import image3 from "../Images/image3.gif";
 
 
 
@@ -13,11 +14,13 @@ const Search = () => {
         color: '#8c101f'
     }
     let divStyle = {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
         url(${image2})`,
         backgroundSize: 'cover',
-        // backgroundPosition: 'center',
-        height: '100vh'
+    
     }
     let inPut = {
         backgroundColor: '#ffbd6f'
@@ -62,22 +65,23 @@ const Search = () => {
 
         <section className='container-fluid'>
             <div className="row">
-                <div className='col-lg-6 col-md-8 col-sm-12 p-3 rounded-3' style={bgstyle}>
+                <div className='col-lg-6 col-md-8 col-sm-12 pt-2 rounded-3'>
                     <input className='form-control mb-2' style={inPut} type="text" placeholder='Enter food here' onChange={(e)=> setfood(e.target.value)}/>
                     <p style={myColor} className='fw-semibold'>{empty}</p>
                     <button className='w-100 btn' style={bgWine} onClick={searchFood}>Search Food</button>
                 </div>
-                <div className='col-lg-6 col-md-8 col-sm-12 p-3 rounded-3'>
-                    <p>
+                <div className='col-lg-6 col-md-8 col-sm-12 rounded-3'>
+                    {/* <p>
                         Lorem ipsum dolor sit, amet consectetur adipisicing eklit. Dolor aperiam nemo neque ut autem. Nobis, aspernatur magni molestiae quo mollitia ipsam perferendis maxime dignissimos. Nemo, ullam aliquam quod odit deleniti eius sed magni, autem dolorum debitis aliquid nostrum culpa. Maxime doloribus laboriosam, reprehenderit odit necessitatibus cum distinctio possimus perferendis vel!
-                    </p>
+                    </p> */}
+                    <div><img src={image3} alt="" /></div>
                 </div>
             </div>
         </section>
         <section className='container-fluid mt-3'>
                 {
                     meal.map((item,index)=>(
-                    <div className='row'>
+                    <div className='row mt-3'>
                     <div style={bgstyle} className=' col-lg-6 col-md-8 col-sm-12 rounded-3'>
                     <div key={index}>
                         <h1 className='fw-bold' style={myColor}>{item.strMeal}</h1>
