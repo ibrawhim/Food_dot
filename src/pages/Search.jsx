@@ -72,7 +72,7 @@ const Search = () => {
                 </div>
                 <div className='col-lg-6 col-md-8 col-sm-12 rounded-3'>
                     {/* <p>
-                        Lorem, ipsum dolor sit, amet consectetur adipisicing eklit. Dolor aperiam nemo neque ut autem. Nobis, aspernatur magni molestiae quo mollitia ipsam perferendis maxime dignissimos. Nemo, ullam aliquam quod odit deleniti eius sed magni, autem dolorum debitis aliquid nostrum culpa. Maxime doloribus laboriosam, reprehenderit odit necessitatibus cum distinctio possimus perferendis vel!
+                        Lorem,i ipsum dolor sit, amet consectetur adipisicing eklit. Dolor aperiam nemo neque ut autem. Nobis, aspernatur magni molestiae quo mollitia ipsam perferendis maxime dignissimos. Nemo, ullam aliquam quod odit deleniti eius sed magni, autem dolorum debitis aliquid nostrum culpa. Maxime doloribus laboriosam, reprehenderit odit necessitatibus cum distinctio possimus perferendis vel!
                     </p> */}
                 </div>
             </div>
