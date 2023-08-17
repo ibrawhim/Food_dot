@@ -15,8 +15,8 @@ const Search = () => {
     }
     let divStyle = {
         position: 'absolute',
-        width: '100%',
-        height: '100%',
+        // width: '100%',
+        // height: '100%',
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
         url(${image2})`,
         backgroundSize: 'cover',
@@ -61,7 +61,7 @@ const Search = () => {
 
   return (
     <>
-        <div style={divStyle} className='pt-lg-5'>
+        <div style={divStyle} className='pt-lg-5 bg-local'>
 
         <section className='container-fluid'>
             <div className="row">
