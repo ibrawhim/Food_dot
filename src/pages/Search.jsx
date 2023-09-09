@@ -14,7 +14,7 @@ const Search = () => {
         color: '#8c101f'
     }
     let divStyle = {
-        // position: 'absolute',
+        position: 'absolute',
         width: '100vw',
         height: '100vh',
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
@@ -61,7 +61,7 @@ const Search = () => {
 
   return (
     <>
-        <div style={divStyle} className='pt-lg-5 bg-fixed h-screen w-screen'>
+        <div style={divStyle} className='pt-lg-5 bg-fixed'>
 
         <section className='container-fluid'>
             <div className="row">
